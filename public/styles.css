@@ -1,0 +1,28 @@
+nav {
+    background-color: rgb(15, 130, 70);
+    color: white;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    display: block;
+    max-width: fit-content; 
+    height:auto; 
+    overflow: auto;
+}
