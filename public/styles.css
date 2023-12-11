@@ -6,23 +6,38 @@ nav {
     justify-content: space-between;
 }
 
-li {
+nav ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    list-style: none;
-    display: inline-block;
-    margin: 0 10px;
 }
 
-a {
+nav li {
+    list-style: none;
+}
+
+nav li a,
+nav h4 a {
     text-decoration: none;
     color: white;
+    padding: 5px 8px;
+}
+
+nav li a:hover,
+nav h4 a:hover {
+    color: yellow;
+    text-decoration: none;
 }
 
 .container {
     display: block;
-    max-width: fit-content; 
+    max-width: fit-content;
     height:auto; 
     overflow: auto;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
