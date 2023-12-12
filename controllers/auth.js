@@ -16,7 +16,7 @@ exports.login = async (req, res) => {
 
         if(!email || !password) {
             return res.status(400).render('login', {
-                message: 'Please provide correct email and password.'
+                message: 'Please provide email and password.'
             })
         }
 
@@ -42,8 +42,7 @@ exports.login = async (req, res) => {
                 }
 
                 res.cookie('jwt', token, cookieOptions);
-                console.log('Cookie set:', token);
-                return res.status(200).send('Login successful'); // Temporary response for testing
+                res.status(200).redirect('/profile');
 
             }
         })
@@ -51,10 +50,6 @@ exports.login = async (req, res) => {
         console.log(error);
     }
 }
-
-
-
-
 
 
 exports.register = (req, res) => {

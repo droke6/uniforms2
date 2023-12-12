@@ -33,6 +33,15 @@ nav h4 a:hover {
     text-decoration: none;
 }
 
+.dropdown-toggle {
+    background-color: rgb(24, 143, 82);
+    border: none;
+}
+
+.dropdown-menu {
+    background-color: rgb(24, 143, 82);
+}
+
 .container {
     display: block;
     /* max-width: 600px; */
@@ -52,7 +61,6 @@ nav h4 a:hover {
     color: white;
 }
 
-.status {
+.profile {
     text-align: center;
-    color: rgb(24, 56, 29);
 }

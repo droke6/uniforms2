@@ -22,4 +22,12 @@ router.get('/status', (req, res) => {
   res.render('status');
 })
 
+router.get('/profile', (req, res) => {
+  res.render('profile');
+})
+
+router.get('/basketball', (req, res) => {
+  res.render('basketball');
+})
+
 module.exports = router;
