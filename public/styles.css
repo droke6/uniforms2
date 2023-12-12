@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(225, 248, 236);
+}
+
 nav {
     background-color: rgb(15, 130, 70);
     color: white;
@@ -31,13 +35,24 @@ nav h4 a:hover {
 
 .container {
     display: block;
-    max-width: fit-content;
+    /* max-width: 600px; */
     height:auto; 
     overflow: auto;
+    background-color:  rgb(225, 248, 236);
 }
 
 .home-buttons {
     display: flex;
     gap: 20px;
     align-items: center;
+}
+
+.card-header {
+    background-color: rgb(15, 130, 70);
+    color: white;
+}
+
+.status {
+    text-align: center;
+    color: rgb(24, 56, 29);
 }
