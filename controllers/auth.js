@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
+const {promisify} = require('util')
 
 const db =  mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -21,7 +22,7 @@ exports.login = async (req, res) => {
         }
 
         db.query('SELECT * FROM credentials WHERE email = ?', [email], async (error,results) => {
-            if(!results || !(await bcrypt.compare(password, results[0].password))){
+            if (!results || results.length == 0 || !(await bcrypt.compare( password, results[0].password))) {
                 res.status(401).render('login', {
                     message: 'Email or Password is incorrect.'
                 })
@@ -51,11 +52,10 @@ exports.login = async (req, res) => {
     }
 }
 
-
 exports.register = (req, res) => {
     console.log(req.body);
 
-    const {name, email, password, passwordConfirm} = req.body;
+    const {first_name, last_name, email, password, passwordConfirm} = req.body;
 
     db.query('SELECT email FROM credentials WHERE email = ?', [email], async (error,results) => {
         if(error) {
@@ -75,7 +75,7 @@ exports.register = (req, res) => {
         let hashedPassword = await bcrypt.hash(password, 8);
         console.log(hashedPassword)
 
-        db.query('INSERT INTO credentials SET ?', {name: name, email: email, password: hashedPassword}, (error, results) => {
+        db.query('INSERT INTO credentials SET ?', {first_name: first_name, last_name: last_name, email: email, password: hashedPassword}, (error, results) => {
             if(error) {
                 console.log(error)
             } else {
@@ -88,4 +88,43 @@ exports.register = (req, res) => {
 
     });
 
+}
+
+exports.isLoggedIn = async (req, res, next) =>{
+    console.log(req.cookies);
+    if (req.cookies.jwt){
+        try {
+            // verify the token
+            const decoded = await promisify(jwt.verify)(req.cookies.jwt,
+                process.env.JWT_SECRET
+            );
+
+            console.log(decoded)
+
+            // check if the user still exists
+            db.query('SELECT * FROM credentials WHERE id = ?', [decoded.id], (error, result) =>{
+                console.log(result);
+
+                if(!result) {
+                    return next();
+                }
+
+                req.user = result[0];
+                return next();
+            });
+        } catch (error) {
+            return next();
+        }
+    }else{
+        next();
+    }
+}
+
+exports.logout = async (req, res) =>{
+    res.cookie('jwt', 'logout', {
+        expires: new Date(Date.now() + 2*1000),
+        httpOnly: true
+    });
+
+    res.status(200).redirect('/index')
 }

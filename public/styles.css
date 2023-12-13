@@ -43,12 +43,10 @@ nav h4 a:hover {
 }
 
 .container {
-    display: block;
-    /* max-width: 600px; */
     height:auto; 
     overflow: auto;
     background-color:  rgb(225, 248, 236);
-}
+} */
 
 .home-buttons {
     display: flex;
@@ -64,3 +62,14 @@ nav h4 a:hover {
 .profile {
     text-align: center;
 }
+
+.avatar-ctn {
+    background-color: orange;
+    text-align: center;
+}
+
+.avatar {
+    width: 65%;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+

@@ -2,12 +2,17 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('index');
-});
+const authController = require('../controllers/auth.js')
+
+// router.get('/', (req, res) => {
+//   res.render('index');
+// });
 
 router.get('/index', (req, res) => {
-    res.render('index');
+    res.render('index',
+    {
+      user: req.user
+    });
 })
 
 router.get('/register', (req, res) => {
@@ -22,8 +27,15 @@ router.get('/status', (req, res) => {
   res.render('status');
 })
 
-router.get('/profile', (req, res) => {
-  res.render('profile');
+router.get('/profile', authController.isLoggedIn, (req, res) => {
+  if(req.user){
+    res.render('profile', {
+      user: req.user
+    });
+  } else {
+    res.redirect('/login');
+  }
+  
 })
 
 router.get('/basketball', (req, res) => {
