@@ -73,3 +73,12 @@ nav h4 a:hover {
     border-bottom: 1px solid rgba(0,0,0,0.125);
 }
 
+.sports-container {
+    display: none;
+}
+
+.sports-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}

@@ -31,7 +31,7 @@ db.connect((error) => {
   if (error) {
     console.log(error);
   } else {
-    console.log('Connected to database');
+    console.log('Connected to database...');
   }
 });
 
