@@ -2,3 +2,14 @@
     text-align: center;
     color: rgb(24, 56, 29);
 }
+
+.card-title,
+.card-subtitle {
+    text-align: center;
+}
+
+.jersey,
+.card-footer {
+    display: block;
+    margin: 0 auto;
+}

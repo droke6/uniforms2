@@ -82,3 +82,13 @@ nav h4 a:hover {
     justify-content: space-evenly;
     gap: 10px;
 }
+
+.basketball-container {
+    display: none;
+    text-align: center;
+}
+
+.basketball-row {
+    display: flex;
+    justify-content: space-evenly;
+}

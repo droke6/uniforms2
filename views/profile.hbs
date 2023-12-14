@@ -55,7 +55,7 @@
             <div class="col-4"></div>
             <div class="col-4">
                 <div class="sports-buttons">
-                    <a href="#" class="btn btn-primary">Basketball</a>
+                    <a href="#" class="btn btn-primary" id="basketballBtn">Basketball</a>
                     <a href="#" class="btn btn-primary">Soccer</a>
                     <a href="#" class="btn btn-primary">Volleyball</a>
                     <a href="#" class="btn btn-primary">Baseball</a>
@@ -68,6 +68,55 @@
         </div>
     </div>
 
+    <div class="basketball-container" id="basketball-container">
+        <div class="basketball-options mt-4">
+            <h1>Basketball Uniforms</h1>
+            <h2>Select a Style</h2>
+        </div>
+
+        <div class="options-container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <div class="card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Custom Jerseys</h5>
+                                    <img src="/images/black.png" class="jersey">
+                                    <h6 class="card-subtitle mb-2 text-muted">Price:
+                                        <span class="text-success">$19.99</span>
+                                        <span class="text-success">per jersey</span>
+                                </div>
+                                
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn-primary">Place Order</button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Grab & Go Jerseys</h5>
+                                <img src="/images/black.png" class="jersey">
+                                <h6 class="card-subtitle mb-2 text-muted">Price:
+                                    <span class="text-success">$25.00</span>
+                                    <span class="text-muted">per jersey</span>
+                            </div>
+
+                            <img src="/grabngoblack.png" alt="">
+                            
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-primary">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+    </div>
+
+
     <script>
         const newOrder = document.getElementById('new-order');
         const sportsContainer = document.getElementById('sports-container');
@@ -75,7 +124,16 @@
         newOrder.addEventListener('click', function() {
             // Toggle visibility of sports container
             sportsContainer.style.display = (sportsContainer.style.display === 'none') ? 'block' : 'none';
-}       );
+        });
+    </script>
+
+    <script>
+        const basketballBtn = document.getElementById('basketballBtn');
+        const basketballContainer = document.getElementById('basketball-container');
+
+        basketballBtn.addEventListener('click', function() {
+            basketballContainer.style.display =(basketballContainer.style.display === 'none') ? 'block' : 'none';
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
