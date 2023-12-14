@@ -42,4 +42,14 @@ router.get('/basketball', (req, res) => {
   res.render('basketball');
 })
 
+router.get('/basketball-order', authController.isLoggedIn, (req, res) => {
+  if(req.user){
+    res.render('basketball-order', {
+      user: req.user
+    });
+  } else {
+    res.redirect('/profile');
+  }
+});
+
 module.exports = router;
