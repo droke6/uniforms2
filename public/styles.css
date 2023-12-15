@@ -92,3 +92,28 @@ nav h4 a:hover {
     display: flex;
     justify-content: space-evenly;
 }
+
+#required {
+    color: red;
+}
+
+.size-container{
+    display: flex;
+}
+
+.quantity, 
+.jersey-size,
+.total-per-size {
+    display: flex;
+    flex-direction: column;
+}
+
+.total-per-size {
+    width: 100px;
+    gap: 2px;
+}
+
+select {
+    width: 75px;
+    gap: 2px;
+}

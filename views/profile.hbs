@@ -84,30 +84,41 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Custom Jerseys</h5>
                                     <img src="/images/black.png" class="jersey">
-                                    <h6 class="card-subtitle mb-2 text-muted">Price:
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <span class="text-muted">Price:</span>
                                         <span class="text-success">$19.99</span>
-                                        <span class="text-success">per jersey</span>
-                                </div>
-                                
+                                        <span class="text-muted">per jersey</span>
+                                    </h6>
+                                        <p><a class="btn btn-primary mt-4" data-toggle="collapse" href="#info" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">More Information</a></p>
+                                        <div class="collapse multi-collapse" id="info">
+                                        <div class="card card-body">
+                                            Grab and Go Jerseys are pre-made jerseys with predetermined numbers. You can choose the color you'd like. 
+                                            The reversible side will be white. You will need to let us know the jersey sizes your team will need.
+                                        </div>
+                                    </div>
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-primary">Place Order</button>
+                                    <button type="button" class="btn btn-primary" id="custom-order">Place Order</button>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Grab & Go Jerseys</h5>
-                                <img src="/images/black.png" class="jersey">
-                                <h6 class="card-subtitle mb-2 text-muted">Price:
-                                    <span class="text-success">$25.00</span>
-                                    <span class="text-muted">per jersey</span>
-                            </div>
-
-                            <img src="/grabngoblack.png" alt="">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Grab & Go Jerseys</h5>
+                            <img src="/images/black.png" class="jersey">
+                            <h6 class="card-subtitle mb-2 text-muted">Price:
+                                <span class="text-success">$25.00</span>
+                                <span class="text-muted">per jersey</span>
+                            </h6>
                             
-                            <div class="card-footer">
+
+                            <button type="button" class="btn btn-lg btn-primary mt-4" data-toggle="popover" title="Popover title" data-content="Grab and Go Jerseys are pre-made jerseys with pre-determined numbers.
+                            All you need to do is pick a color and enter jersey sizes.">More Information</button>
+
+
+                            <div class="card-footer mt-4">
                                 <button type="button" class="btn btn-primary" id="place-order">Place Order</button>
                             </div>
                         </div>
@@ -116,7 +127,15 @@
                 <div class="col-3"></div>
             </div>
     </div>
-
+    
+    <script>
+        $(document).ready(function() {
+            $('#info').popover({
+                trigger: 'hover';
+                animation: true;
+            });
+        });
+    </script>
 
     <script>
         const newOrder = document.getElementById('new-order');
@@ -143,6 +162,14 @@
         orderButton.addEventListener('click', function() {
             console.log('clicked');
             window.location.href = '/basketball-order';
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var myCollapse = new bootstrap.Collapse(document.getElementById('info'), {
+            toggle: false // Set to false to prevent initial toggle
+        });
         });
     </script>
 

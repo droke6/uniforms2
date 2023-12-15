@@ -22,7 +22,257 @@
         </ul>
     </nav>
 
-   
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>User Information</h3>
+            </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2"></div>
+                            <div class="col-8">
+                                <form class="row g-3">
+                                    <div class="col-6">
+                                        <label for="teamName" class="form-label">Team Name</label>
+                                        <input type="text" class="form-control" id="team-name" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone-number" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="coach" class="form-label">Coach's Name</label>
+                                        <input type="text" class="form-control" id="coach-name" value="{{user.first_name}} {{user.last_name}}">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="color" class="form-label">Jersey Color</label>
+                                        <input type="text" class="form-control" id="jersey-color" required>
+                                        <p>See color options <a href="#">here.</a></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="text" class="form-control" id="email" value="{{user.email}}" required>
+                                        <p>Please double check your email address.</p>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="shortColor" class="form-label">Short Color</label>
+                                        <input type="text" class="form-control" id="short-color">
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" type="checkbox" id="no-choice">
+                                                <label class="form-check-label" for="noChoice">
+                                                Check here if you are not ordering shorts.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>                   
+                    <div class="container mt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Select Uniform Sizes</h3>
+                            </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5>Size Option</h5>
+                                            <div class="size">
+                                                <label for="ys-quantity">Youth Small</label>
+                                            </div>
+                                            <div class="size">
+                                                <label for="ys-quantity">Youth Medium</label>
+                                            </div>
+                                            <div class="size">
+                                                <label for="ys-quantity">Youth Large</label>
+                                            </div>
+                                            <div class="size">
+                                                <label for="ys-quantity">Youth Extra Large</label>
+                                            </div>
+                                            <div class="size">
+                                                <label for="as-quantity">Adult Small</label>
+                                            </div>
+                                            <div class="size">
+                                                <label for="am-quantity">Adult Medium</label>
+                                            </div>
+                                            <div class="size">
+                                                <label for="al-quantity">Adult Large</label>
+                                            </div>
+                                            <div class="size">
+                                                <label for="axl-quantity">Adult Extra Large</label>
+                                            </div>
+                                        </div>
+
+                                    <div class="col-md-6">
+                                        <h5>Jerseys Needed</h5>
+                                        <div class="size">
+                                            <select name="quantity" id="youth-small">
+                                                <option value="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="size">
+                                            <select name="quantity" id="youth-medium">
+                                                <option value="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="size">
+                                            <select name="quantity" id="youth-large">
+                                                <option value="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="size">
+                                            <select name="quantity" id="youth-xl">
+                                                <option value="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="size">
+                                            <select name="quantity" id="small">
+                                                <option value="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="size">
+                                            <select name="quantity" id="medium">
+                                                <option value="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="size">
+                                            <select name="quantity" id="large">
+                                                <option value="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="size">
+                                            <select name="quantity" id="xl">
+                                                <option value="0"></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <h6 class="mt-4">Numbers for grab-and-go jerseys are assigned by the uniform shop.
+                                    If you would like custom numbers, please fill out the form for a custom basketball order.</h6>
+                            </div>
+                        </div>
+                    </div>
+    
+
+                    <div class="container mt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Order Summary</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Youth Small</h5>
+                                        <h5>Youth Medium</h5>
+                                        <h5>Youth Large</h5>
+                                        <h5>Youth Extra Large</h5>
+                                        <h5>Adult Small</h5>
+                                        <h5>Adult Medium</h5>
+                                        <h5>Adult Large</h5>
+                                        <h5>Adult Extra Large</h5>
+                                    </div>
+
+                                    <div class="col-md-6 total-per-size">
+                                        <input id="order-summary">
+                                        <input id="order-summary">
+                                        <input id="order-summary">
+                                        <input id="order-summary">
+                                        <input id="order-summary">
+                                        <input id="order-summary">
+                                        <input id="order-summary">
+                                        <input id="order-summary">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
@@ -31,6 +281,70 @@
 
 
 
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                I confirmed that all information entered in this form is accurate and correct. <span id="required">*</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit Order!</button>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+    <script>
+        const noChoice = document.getElementById('no-choice');
+        const shortColor = document.getElementById('short-color');
+        const youthSmall = document.getElementById('youth-small');
+        const youthMedium = document.getElementById('youth-medium');
+        const youthLarge = document.getElementById('youth-large');
+        const youthXL = document.getElementById('youth-xl');
+        const small = document.getElementById('small');
+        const medium = document.getElementById('medium');
+        const large = document.getElementById('large');
+        const extraLarge = document.getElementById('xl');
+
+        noChoice.addEventListener('change', function() {
+            shortColor.disabled = this.checked;
+            shortColor.value = '';
+            youthSmall.disabled = this.checked;
+            youthSmall.value = '';
+            youthMedium.disabled = this.checked;
+            youthMedium.value = '';
+            youthLarge.disabled = this.checked;
+            youthLarge.value = '';
+            youthXL.disabled = this.checked;
+            youthXL.value = '';
+            small.disabled = this.checked;
+            small.value = '';
+            medium.disabled = this.checked;
+            medium.value = '';
+            large.disabled = this.checked;
+            large.value = '';
+            extraLarge.disabled = this.checked;
+            extraLarge.value = '';
+        });
+    </script>
 
 
 
