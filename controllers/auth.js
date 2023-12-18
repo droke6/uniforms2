@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const {promisify} = require('util')
+const nodemailer = require('nodemailer');
+const crypto = require('crypto');
 
 const db =  mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -128,3 +130,5 @@ exports.logout = async (req, res) =>{
 
     res.status(200).redirect('/index')
 }
+
+

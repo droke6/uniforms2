@@ -117,3 +117,7 @@ select {
     width: 75px;
     gap: 2px;
 }
+
+.ggorder {
+    text-align: center;
+}

@@ -89,16 +89,15 @@
                                         <span class="text-success">$19.99</span>
                                         <span class="text-muted">per jersey</span>
                                     </h6>
-                                        <p><a class="btn btn-primary mt-4" data-toggle="collapse" href="#info" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">More Information</a></p>
-                                        <div class="collapse multi-collapse" id="info">
-                                        <div class="card card-body">
-                                            Grab and Go Jerseys are pre-made jerseys with predetermined numbers. You can choose the color you'd like. 
-                                            The reversible side will be white. You will need to let us know the jersey sizes your team will need.
-                                        </div>
-                                    </div>
-                                <div class="card-footer">
+
+                                    <button type="button" class="btn btn-lg btn-primary mt-4" data-toggle="popover" title="Popover title" data-content="Grab and Go Jerseys are pre-made jerseys with pre-determined numbers.
+                                    All you need to do is pick a color and enter jersey sizes.">More Information</button>
+
+                                <div class="card-footer mt-4">
+                                
                                     <button type="button" class="btn btn-primary" id="custom-order">Place Order</button>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -127,51 +126,52 @@
                 <div class="col-3"></div>
             </div>
     </div>
-    
-    <script>
-        $(document).ready(function() {
-            $('#info').popover({
-                trigger: 'hover';
-                animation: true;
-            });
-        });
-    </script>
 
     <script>
         const newOrder = document.getElementById('new-order');
         const sportsContainer = document.getElementById('sports-container');
 
-        newOrder.addEventListener('click', function() {
-            // Toggle visibility of sports container
-            sportsContainer.style.display = (sportsContainer.style.display === 'none') ? 'block' : 'none';
-        });
+            newOrder.addEventListener('click', function() {
+                // Toggle visibility of sports container
+                sportsContainer.style.display = (sportsContainer.style.display === 'none') ? 'block' : 'none';
+            });        
     </script>
 
     <script>
         const basketballBtn = document.getElementById('basketballBtn');
         const basketballContainer = document.getElementById('basketball-container');
 
-        basketballBtn.addEventListener('click', function() {
+            basketballBtn.addEventListener('click', function() {
             basketballContainer.style.display =(basketballContainer.style.display === 'none') ? 'block' : 'none';
-        });
+            });
     </script>
 
     <script>
         const orderButton = document.getElementById('place-order');
 
-        orderButton.addEventListener('click', function() {
-            console.log('clicked');
-            window.location.href = '/basketball-order';
-        });
+            orderButton.addEventListener('click', function() {
+                console.log('clicked');
+                window.location.href = '/basketball-order';
+            });
     </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var myCollapse = new bootstrap.Collapse(document.getElementById('info'), {
-            toggle: false // Set to false to prevent initial toggle
-        });
+            toggle: false// Set to false to prevent initial toggle
+            });
         });
     </script>
+    
+    <script>
+    {$(document).ready(function() {
+            $('#info').popover({
+                trigger: 'hover',
+                animation: true,
+            });
+        });}
+    </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
